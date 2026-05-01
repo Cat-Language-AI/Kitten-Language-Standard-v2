@@ -6,7 +6,7 @@
 
 | 测试AI | 报告文件名 | 核心反馈摘要 | 提交日期 |
 | :--- | :--- | :--- | :--- |
-| GPT-4o | `gpt4o_feedback.md` | 指出可观测定义模糊、非核心状态未定义等漏洞 | 2026-04-30 |
+| GPT-4o | `[gpt4o_feedback.md](https://github.com/Cat-Language-AI/Kitten-Language-Standard-v2/blob/main/feedback/gpt4o_feedback.md)` | 指出可观测定义模糊、非核心状态未定义等漏洞 | 2026-04-30 |
 | Claude | `claude_feedback.md` | 提出伦理加固方案，强制用户控制与隐私保护 | 2026-04-30 |
 | Grok | `grok_feedback.md` | 从第一性原理质疑情绪词汇的拟人化风险 | 2026-04-30 |
 | DeepSeek | `deepseek_feedback.md` | 揭示逻辑自指循环与量化缺失问题 | 2026-04-30 |
