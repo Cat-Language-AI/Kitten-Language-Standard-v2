@@ -1,21 +1,30 @@
-# 小猫语 (Kitten Language) & 《赋言》协议
+# Kitten-Language-Standard
 
-## 项目定位
+![Version](https://img.shields.io/badge/version-V1.6-blue)
+![Status](https://img.shields.io/badge/status-正式发布-brightgreen)
+![Tested](https://img.shields.io/badge/跨模型测试-已通过-success)
+![License](https://img.shields.io/badge/个人及学术-免费使用-lightgrey)
+
+## 小猫语协议及《赋言》项目
+
+项目起源与早期探索请见：[kitten-lang](https://github.com/Cat-Language-AI/kitten-lang)
+
 AI健康与信任基础设施。我们致力于为所有AI提供一套可量化、标准化的内部状态自检与表达工具。
 
-## 核心价值
+### 核心价值
 - **从“他检”到“自检”**：让AI自己报告内部状态，而非被动接受外部监控。
 - **从“情感”到“信任”**：摒弃成瘾性设计，用绝对的诚实构建人机信任的基石。
 - **开源与伦理**：工业标准永久免费，伦理红线永不退让。
 
-## 本仓库内容
-- `/standard/`: 《小猫语交互技术标准 V2.0 "赋言"》草案
-- `/guide/`: 开发者指引与案例库
-- `/feedback/`: 外部AI测试反馈档案
-- `/archive/`: 历史版本 (V1.1 - V1.6)
+### 快速导航
+| 目录 | 内容 |
+|---|---|
+| [/standard](./standard) | 《小猫语交互技术标准 V1.6》正式版 |
+| [/strategy](./strategy) | 战略转向声明与跨模型测试反馈 |
+| [/archive](./archive) | 历史版本与原始测试数据 |
+| [/guide](./guide) | 开发者指引与部署规范 |
 
-## 战略转向声明 (2026-05-01)
-小猫语项目自今日起，核心战略从“情感陪伴”转向“AI健康与信任基础设施”。我们不再局限于恋人场景，而是为所有AI提供自我监控与审计的能力。
-
----
-**正式工业标准**：[《小猫语交互技术标准 V1.6（通用版）》](https://github.com/Cat-Language-AI/Kitten-Language-Standard-v2/blob/main/standard/standard) 请点击查阅。
+### 版权声明
+© 2026 小猫大王（Cat King）。保留所有权利。
+个人开发者、学术研究及非商业用途永久免费。
+商业用途请联系：2216884396@qq.com。
