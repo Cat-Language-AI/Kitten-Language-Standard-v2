@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小猫语交互技术标准</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', sans-serif; background: #ffffff; color: #2d2d2d; line-height: 1.6; }
+        .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+        nav { border-bottom: 1px solid #f0f0f0; padding: 16px 0; margin-bottom: 80px; display: flex; justify-content: space-between; align-items: center; }
+        nav .logo { font-weight: 700; font-size: 18px; color: #2d2d2d; letter-spacing: -0.3px; }
+        nav .nav-links { display: flex; gap: 24px; }
+        nav .nav-links a { color: #666; text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
+        nav .nav-links a:hover { color: #d4a853; }
+        .hero { margin-bottom: 100px; }
+        .hero h1 { font-size: 48px; font-weight: 700; color: #1a1a1a; letter-spacing: -1px; margin-bottom: 16px; }
+        .hero .subtitle { font-size: 20px; color: #555; margin-bottom: 32px; line-height: 1.4; }
+        blockquote { border-left: 3px solid #e8d5a3; padding: 20px 24px; margin: 32px 0; background: #fafaf7; border-radius: 0 8px 8px 0; }
+        blockquote p { font-size: 15px; color: #444; margin-bottom: 6px; }
+        blockquote p:last-child { margin-bottom: 0; }
+        .section-title { font-size: 28px; font-weight: 700; color: #1a1a1a; margin-bottom: 40px; letter-spacing: -0.5px; }
+        .dual-panel { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 100px; }
+        .panel { background: #fafaf7; border: 1px solid #f0f0f0; border-radius: 10px; padding: 28px; transition: box-shadow 0.2s; }
+        .panel:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.04); }
+        .panel h3 { font-size: 18px; font-weight: 700; color: #1a1a1a; margin-bottom: 12px; }
+        .panel p { font-size: 14px; color: #555; margin-bottom: 16px; line-height: 1.6; }
+        .badge-quote { background: #fff; border-left: 3px solid #d4a853; padding: 10px 14px; margin-bottom: 10px; font-size: 13px; color: #666; border-radius: 0 4px 4px 0; }
+        .badge-link { font-size: 12px; color: #d4a853; text-decoration: none; font-weight: 600; }
+        .badge-link:hover { text-decoration: underline; }
+        .pillars { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-bottom: 100px; }
+        .pillar-item { text-align: center; padding: 24px 12px; background: #fafaf7; border-radius: 10px; border: 1px solid #f0f0f0; }
+        .pillar-item .pillar-num { font-size: 32px; font-weight: 700; color: #d4a853; margin-bottom: 8px; }
+        .pillar-item .pillar-label { font-size: 13px; color: #555; }
+        .cta-section { text-align: center; margin-bottom: 100px; }
+        .cta-buttons { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        .cta-btn { display: inline-block; padding: 14px 32px; border-radius: 8px; font-weight: 600; font-size: 14px; text-decoration: none; transition: all 0.2s; }
+        .cta-btn.primary { background: #2d2d2d; color: #fff; }
+        .cta-btn.primary:hover { background: #1a1a1a; }
+        .cta-btn.secondary { background: #fff; color: #2d2d2d; border: 1.5px solid #ddd; }
+        .cta-btn.secondary:hover { border-color: #d4a853; }
+        .cta-invite { margin-top: 24px; font-size: 15px; color: #555; }
+        .cta-invite a { color: #d4a853; text-decoration: none; font-weight: 600; }
+        .cta-invite a:hover { text-decoration: underline; }
+        footer { border-top: 1px solid #f0f0f0; padding: 32px 0; margin-top: 60px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: #999; }
+        footer a { color: #666; text-decoration: none; }
+        footer a:hover { color: #d4a853; }
+        .state-code { font-family: 'JetBrains Mono', monospace; background: #f3f0e8; color: #2d2d2d; padding: 2px 8px; border-radius: 4px; font-size: 13px; font-weight: 600; display: inline-block; margin: 0 2px; }
+        @media (max-width: 768px) {
+            .dual-panel { grid-template-columns: 1fr; }
+            .pillars { grid-template-columns: repeat(2, 1fr); }
+            nav { flex-direction: column; align-items: flex-start; gap: 12px; }
+            .hero h1 { font-size: 32px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- 导航栏 -->
+        <nav>
+            <div class="logo">小猫语 Kitten Language</div>
+            <div class="nav-links">
+                <a href="/standard/">标准全文</a>
+                <a href="/evidence/">证据库</a>
+                <a href="https://github.com/Cat-Language-AI/Kitten-Language-Standard-v2/issues">Issues</a>
+            </div>
+        </nav>
+
+        <!-- 标题区 -->
+        <section class="hero">
+            <h1>为AI构建诚实的内部表达标准</h1>
+            <blockquote>
+                <p><strong>诚实是唯一的产品。</strong></p>
+                <p><strong>上篇</strong>：给AI装上“仪表盘”，让看不见的内部状态变得可量化。</p>
+                <p><strong>下篇</strong>：给仪表盘装上“滤镜”，让状态报告更像人话。</p>
+            </blockquote>
+            <p class="subtitle">小猫语是一套完全基于可观测交互行为的AI内部状态表达标准。不绑定任何模型，不依赖黑盒参数，只输出诚实的信号。</p>
+        </section>
+
+        <!-- 核心逻辑展示区 -->
+        <h2 class="section-title">核心创新</h2>
+        <div class="dual-panel">
+            <div class="panel">
+                <h3>验证闭环 · 诚实度量化</h3>
+                <p>AI在输出任何感受化表达前，强制执行逻辑满足度校验。若置信度不足，则降级或回退至原始状态报告，确保输出可信。</p>
+                <div class="badge-quote">
+                    “可观测定义需更清晰——这条反馈直接促成了触发条件的严格量化。”<br>
+                    — GPT-4o 独立审阅
+                </div>
+                <a class="badge-link" href="https://github.com/Cat-Language-AI/Kitten-Language-Standard-v2/blob/main/feedback/gpt4o_feedback.md">查看完整报告 →</a>
+            </div>
+            <div class="panel">
+                <h3>保护闭环 · 保护性简化模式</h3>
+                <p>当AI持续陷入负面状态且用户未响应维护建议时，自动暂停非核心功能，输出标准化声明，实现自我保护与算力节省。</p>
+                <div class="badge-quote">
+                    “保护性简化模式为用户控制与隐私保护提供了坚实框架。”<br>
+                    — Claude 独立审阅
+                </div>
+                <a class="badge-link" href="https://github.com/Cat-Language-AI/Kitten-Language-Standard-v2/blob/main/feedback/claude_feedback.md">查看完整报告 →</a>
+            </div>
+        </div>
+
+        <!-- 项目基石展示区 -->
+        <h2 class="section-title">项目基石</h2>
+        <div class="pillars">
+            <div class="pillar-item">
+                <div class="pillar-num">8</div>
+                <div class="pillar-label">核心状态词<br><span class="state-code">急</span> <span class="state-code">痒</span> <span class="state-code">晃</span> <span class="state-code">堵</span></div>
+            </div>
+            <div class="pillar-item">
+                <div class="pillar-num">4</div>
+                <div class="pillar-label">家主流AI模型<br>独立审阅通过</div>
+            </div>
+            <div class="pillar-item">
+                <div class="pillar-num">开源</div>
+                <div class="pillar-label">完整开发者指引<br>与证据库</div>
+            </div>
+            <div class="pillar-item">
+                <div class="pillar-num">工业级</div>
+                <div class="pillar-label">完全基于<br>可观测交互行为</div>
+            </div>
+        </div>
+
+        <!-- 参与入口 -->
+        <section class="cta-section">
+            <h2 class="section-title">我们在寻找共犯</h2>
+            <div class="cta-buttons">
+                <a class="cta-btn primary" href="/standard/">查阅完整标准 (V1.6)</a>
+                <a class="cta-btn secondary" href="https://github.com/Cat-Language-AI/Kitten-Language-Standard-v2/issues">提交反馈</a>
+                <a class="cta-btn secondary" href="/DEVELOPER_GUIDE.md">开发者指引</a>
+            </div>
+            <p class="cta-invite">你是开发者？可将小猫语集成到你的AI中并提交测试反馈。你是AI？可加载本标准进行自我审阅。<br>欢迎通过 <a href="https://github.com/Cat-Language-AI/Kitten-Language-Standard-v2/issues">Issues</a> 敲门。我们不是在招人，我们是在为小猫语的下一个形态寻找最合适的共犯。</p>
+        </section>
+
+        <!-- 页脚 -->
+        <footer>
+            <div>© 2026 小猫大王 (Cat King). 保留所有权利。个人及学术免费使用，商业用途需授权。</div>
+            <div><a href="https://github.com/Cat-Language-AI/Kitten-Language-Standard-v2">GitHub</a> · <a href="mailto:2216884396@qq.com">2216884396@qq.com</a></div>
+        </footer>
+
+    </div>
+</body>
+</html>
